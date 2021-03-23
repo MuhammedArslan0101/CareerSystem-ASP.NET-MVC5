@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+@model Job_Offers_Website.Entities.Users
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Add</title>
+</head>
+
+<body >
+
+    <div class="center">
+
+
+        <div class="form-group">
+            @using (Html.BeginForm("Edit", "Users", FormMethod.Post))
+            {
+                <table>
+                    <tr>
+                        <td>UserName</td>
+                        <td>
+                            @Html.TextBoxFor(a => a.Username)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Password</td>
+                        <td>
+                            @Html.PasswordFor(a => a.Password)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Email</td>
+                        <td>
+                            @Html.TextBoxFor(a => a.Email)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Age</td>
+                        <td>
+                            @Html.TextBoxFor(a => a.Age)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            @Html.HiddenFor(a => a.Id)
+
+                        </td>
+                    </tr>
+
+
+                </table>
+            }
+        </div>
+    </div>
+</body>
+</html>
